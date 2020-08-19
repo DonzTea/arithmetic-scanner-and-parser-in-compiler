@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Micro Scanner dan Parser</title>
+
+  <!--=======Custom Style======-->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="row">
+
+    <div class="column">
+      <div class="container-box">
+        <div class="head">Micro Lexical Analyzer</div>
+        <div class="box">
+          <p class="text-p">
+            Scanner ini hanya menangani input operasi aritmetika seperti :
+            <br />
+            6x % 4 + 3y * 5xyz - 3z ^ 2 / 2
+            <br /><br />
+            Batasan input :
+            <br />
+            <ol style="font-size: 13px;">
+              <li>Menangani operator aritmatika berupa : +, -, *, /, %, dan ^</li>
+              <li>Menangani variabel seperti : x, 2y, 5xyz, dan lainnya</li>
+              <li>Token meliputi : angka, variabel, dan operator</li>
+              <li>Tidak menangani delimiter seperti kurung buka dan kurung tutup</li>
+              <li>Tidak menangani fungsi seperti : sin(), sqrt(), dan lainnya</li>
+              <li>Tidak menangani operator logika seperti : and, or, >=, !=, dan lainnya</li>
+            </ol>
+          </p>
+          <br />
+          <div class="form-group">
+            <label class="label-control">
+              <span class="label-text">Input</span>
+            </label>
+            <input type="text" name="input" class="form-control" />
+          </div>
+          <div class="form-group active">
+            <label class="label-control">
+              <span class="label-text">Output</span>
+            </label>
+            <p class="form-control" style="text-align: center;">Hasil token akan muncul di sini setelah input diisi</p>
+            <table id="output" class="form-control"></table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="container-box">
+        <div class="head" style="background: #9395D3;">Micro Syntax Analyzer</div>
+        <div class="box">
+          <p class="text-p">
+            Dari token yang dihasilkan oleh scanner, parser kemudian menghasilkan pohon
+            sintaks sebagai berikut :
+          </p>
+          <br>
+          <div class="form-group active">
+            <label class="label-control">
+              <span class="label-text">Pohon Sintaks</span>
+            </label>
+            <p class="form-control" style="text-align: center;">
+              Pohon sintaks akan muncul di sini setelah input diisi
+            </p>
+            <div id="syntaxTree" class="form-control"></div>
+          </div>
+          <div class="form-group active">
+            <label class="label-control">
+              <span class="label-text">Kalimat</span>
+            </label>
+            <p class="form-control" style="text-align: center;">
+              Kalimat akan muncul di sini setelah input diisi
+            </p>
+            <div id="sentence" class="form-control"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/ui.js"></script>
+  <script src="js/scanner.js"></script>
+  <script src="js/parser.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
